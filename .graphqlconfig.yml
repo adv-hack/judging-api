@@ -1,0 +1,16 @@
+projects:
+  hackjudgingapi:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: flow
+        generatedFileName: src/API.js
+        docsFilePath: src/graphql
+        graphQLApiId: jx4pl6wtzje4zidzsviz2pr6sq
+      endpoints:
+        prod: >-
+          https://wfkb5g4zqvdlrlzeonnp7tmx5u.appsync-api.eu-west-1.amazonaws.com/graphql

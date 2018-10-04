@@ -1,0 +1,20 @@
+{
+    "projectName": "hackjudgingapi",
+    "projectPath": "/Users/martinreynolds/Projects/javascript/hack-judging-api",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/Users/martinreynolds/.nvm/versions/node/v8.9.4/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "none",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/Users/martinreynolds/.nvm/versions/node/v8.9.4/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}

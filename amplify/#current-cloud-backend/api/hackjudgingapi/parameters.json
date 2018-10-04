@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "hackjudgingapi",
+    "schemaGraphql": "s3://hackjudgingapi-20181004120323-deployment/amplify-appsync-files/schema.graphql.1538655802232",
+    "ResolverBucket": "hackjudgingapi-20181004120323-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1538655802232"
+}

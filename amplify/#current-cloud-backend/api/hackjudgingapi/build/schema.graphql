@@ -1,0 +1,307 @@
+type Mutation {
+  createTeam(input: CreateTeamInput!): Team
+  updateTeam(input: UpdateTeamInput!): Team
+  deleteTeam(input: DeleteTeamInput!): Team
+  createMember(input: CreateMemberInput!): Member
+  updateMember(input: UpdateMemberInput!): Member
+  deleteMember(input: DeleteMemberInput!): Member
+  createJudge(input: CreateJudgeInput!): Judge
+  updateJudge(input: UpdateJudgeInput!): Judge
+  deleteJudge(input: DeleteJudgeInput!): Judge
+  createCriteria(input: CreateCriteriaInput!): Criteria
+  updateCriteria(input: UpdateCriteriaInput!): Criteria
+  deleteCriteria(input: DeleteCriteriaInput!): Criteria
+  createVote(input: CreateVoteInput!): Vote
+  updateVote(input: UpdateVoteInput!): Vote
+  deleteVote(input: DeleteVoteInput!): Vote
+}
+
+type Query {
+  getTeam(id: ID!): Team
+  listTeams(filter: ModelTeamFilterInput, limit: Int, nextToken: String): ModelTeamConnection
+  getMember(id: ID!): Member
+  listMembers(filter: ModelMemberFilterInput, limit: Int, nextToken: String): ModelMemberConnection
+  getJudge(id: ID!): Judge
+  listJudges(filter: ModelJudgeFilterInput, limit: Int, nextToken: String): ModelJudgeConnection
+  getCriteria(id: ID!): Criteria
+  listCriterias(filter: ModelCriteriaFilterInput, limit: Int, nextToken: String): ModelCriteriaConnection
+  getVote(id: ID!): Vote
+  listVotes(filter: ModelVoteFilterInput, limit: Int, nextToken: String): ModelVoteConnection
+}
+
+type Subscription {
+  onCreateTeam: Team @aws_subscribe(mutations: ["createTeam"])
+  onUpdateTeam: Team @aws_subscribe(mutations: ["updateTeam"])
+  onDeleteTeam: Team @aws_subscribe(mutations: ["deleteTeam"])
+  onCreateMember: Member @aws_subscribe(mutations: ["createMember"])
+  onUpdateMember: Member @aws_subscribe(mutations: ["updateMember"])
+  onDeleteMember: Member @aws_subscribe(mutations: ["deleteMember"])
+  onCreateJudge: Judge @aws_subscribe(mutations: ["createJudge"])
+  onUpdateJudge: Judge @aws_subscribe(mutations: ["updateJudge"])
+  onDeleteJudge: Judge @aws_subscribe(mutations: ["deleteJudge"])
+  onCreateCriteria: Criteria @aws_subscribe(mutations: ["createCriteria"])
+  onUpdateCriteria: Criteria @aws_subscribe(mutations: ["updateCriteria"])
+  onDeleteCriteria: Criteria @aws_subscribe(mutations: ["deleteCriteria"])
+  onCreateVote: Vote @aws_subscribe(mutations: ["createVote"])
+  onUpdateVote: Vote @aws_subscribe(mutations: ["updateVote"])
+  onDeleteVote: Vote @aws_subscribe(mutations: ["deleteVote"])
+}
+
+type Team {
+  id: ID!
+  name: String!
+  idea: String!
+  description: String!
+  members(filter: ModelMemberFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelMemberConnection
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelTeamConnection {
+  items: [Team]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelTeamFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  idea: ModelStringFilterInput
+  description: ModelStringFilterInput
+  and: [ModelTeamFilterInput]
+  or: [ModelTeamFilterInput]
+  not: ModelTeamFilterInput
+}
+
+input CreateTeamInput {
+  name: String!
+  idea: String!
+  description: String!
+}
+
+input UpdateTeamInput {
+  id: ID!
+  name: String
+  idea: String
+  description: String
+}
+
+input DeleteTeamInput {
+  id: ID
+}
+
+type Member {
+  id: ID!
+  name: String!
+  email: String!
+  role: String!
+  location: String!
+  team: Team
+  vote: Team
+}
+
+type ModelMemberConnection {
+  items: [Member]
+  nextToken: String
+}
+
+input ModelMemberFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  email: ModelStringFilterInput
+  role: ModelStringFilterInput
+  location: ModelStringFilterInput
+  and: [ModelMemberFilterInput]
+  or: [ModelMemberFilterInput]
+  not: ModelMemberFilterInput
+}
+
+input CreateMemberInput {
+  name: String!
+  email: String!
+  role: String!
+  location: String!
+  memberTeamId: ID
+  memberVoteId: ID
+}
+
+input UpdateMemberInput {
+  id: ID!
+  name: String
+  email: String
+  role: String
+  location: String
+  memberTeamId: ID
+  memberVoteId: ID
+}
+
+input DeleteMemberInput {
+  id: ID
+}
+
+type Judge {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type ModelJudgeConnection {
+  items: [Judge]
+  nextToken: String
+}
+
+input ModelJudgeFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  email: ModelStringFilterInput
+  and: [ModelJudgeFilterInput]
+  or: [ModelJudgeFilterInput]
+  not: ModelJudgeFilterInput
+}
+
+input CreateJudgeInput {
+  name: String!
+  email: String!
+}
+
+input UpdateJudgeInput {
+  id: ID!
+  name: String
+  email: String
+}
+
+input DeleteJudgeInput {
+  id: ID
+}
+
+type Criteria {
+  id: ID!
+  name: String!
+  description: String!
+}
+
+type ModelCriteriaConnection {
+  items: [Criteria]
+  nextToken: String
+}
+
+input ModelCriteriaFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  and: [ModelCriteriaFilterInput]
+  or: [ModelCriteriaFilterInput]
+  not: ModelCriteriaFilterInput
+}
+
+input CreateCriteriaInput {
+  name: String!
+  description: String!
+}
+
+input UpdateCriteriaInput {
+  id: ID!
+  name: String
+  description: String
+}
+
+input DeleteCriteriaInput {
+  id: ID
+}
+
+type Vote {
+  id: ID!
+  judge: Judge
+  team: Team
+  criteria: Criteria
+  vote: Int!
+}
+
+type ModelVoteConnection {
+  items: [Vote]
+  nextToken: String
+}
+
+input ModelVoteFilterInput {
+  id: ModelIDFilterInput
+  vote: ModelIntFilterInput
+  and: [ModelVoteFilterInput]
+  or: [ModelVoteFilterInput]
+  not: ModelVoteFilterInput
+}
+
+input CreateVoteInput {
+  vote: Int!
+  voteJudgeId: ID
+  voteTeamId: ID
+  voteCriteriaId: ID
+}
+
+input UpdateVoteInput {
+  id: ID!
+  vote: Int
+  voteJudgeId: ID
+  voteTeamId: ID
+  voteCriteriaId: ID
+}
+
+input DeleteVoteInput {
+  id: ID
+}

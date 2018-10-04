@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "hackjudgingapi-20181004120323-authRole",
+            "UnauthRoleArn": "arn:aws:iam::343728352001:role/hackjudgingapi-20181004120323-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::343728352001:role/hackjudgingapi-20181004120323-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "hackjudgingapi-20181004120323-deployment",
+            "UnauthRoleName": "hackjudgingapi-20181004120323-unauthRole",
+            "StackName": "hackjudgingapi-20181004120323",
+            "StackId": "arn:aws:cloudformation:eu-west-1:343728352001:stack/hackjudgingapi-20181004120323/1cb8fbd0-c7c5-11e8-9978-50a686342629"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "hack-judging-api",
+  "version": "1.0.0",
+  "description": "API for hackathon judging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Reynolds",
+  "license": "ISC",
+  "dependencies": {
+    "aws-amplify": "^1.1.5"
+  }
+}

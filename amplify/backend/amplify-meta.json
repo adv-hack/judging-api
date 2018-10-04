@@ -1,0 +1,53 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "hackjudgingapi-20181004120323-authRole",
+			"UnauthRoleArn": "arn:aws:iam::343728352001:role/hackjudgingapi-20181004120323-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::343728352001:role/hackjudgingapi-20181004120323-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "hackjudgingapi-20181004120323-deployment",
+			"UnauthRoleName": "hackjudgingapi-20181004120323-unauthRole",
+			"StackName": "hackjudgingapi-20181004120323",
+			"StackId": "arn:aws:cloudformation:eu-west-1:343728352001:stack/hackjudgingapi-20181004120323/1cb8fbd0-c7c5-11e8-9978-50a686342629"
+		}
+	},
+	"api": {
+		"hackjudgingapi": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "jx4pl6wtzje4zidzsviz2pr6sq",
+				"GraphQLAPIEndpointOutput": "https://wfkb5g4zqvdlrlzeonnp7tmx5u.appsync-api.eu-west-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-fdyukjxg7nh6bhlj2nipmmd2ce"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/hackjudgingapi-20181004120323-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apihackjudgingapi"
+			},
+			"lastPushTimeStamp": "2018-10-04T14:44:33.864Z",
+			"lastPushDirHash": "5utScb8Yt8LOaUtiTvziHGgV388="
+		}
+	},
+	"auth": {
+		"cognitoc8d03c88": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/hackjudgingapi-20181004120323-deployment/amplify-cfn-templates/auth/cognitoc8d03c88-cloudformation-template.yml",
+				"logicalId": "authcognitoc8d03c88"
+			},
+			"lastPushTimeStamp": "2018-10-04T14:44:33.867Z",
+			"output": {
+				"AppClientSecret": "1iqbkqok4806arejapcf6k8ou5h1e7kfs7h0itk0mgtg824de16m",
+				"UserPoolId": "eu-west-1_il481QHcj",
+				"AppClientIDWeb": "1e67ddhl3116o77q9m8astk61a",
+				"AppClientID": "18ansglkh4n9as304b7413fnue",
+				"IdentityPoolId": "eu-west-1:23a75f17-436c-4223-a8d7-c013e0ee7f45",
+				"IdentityPoolName": "cognitoc8d03c88_identitypool_c8d03c88",
+				"UserPoolName": "cognitoc8d03c88_userpool_c8d03c88"
+			},
+			"lastPushDirHash": "zQDKic6Hyhm5xOrKNcHT5Iajvcc="
+		}
+	}
+}

@@ -1,0 +1,33 @@
+type Team @model {
+  id: ID!
+  name: String!
+  idea: String!
+  description: String!
+  members: [Member] @connection(name: "TeamMembers")
+}
+type Member @model {
+  id: ID!
+  name: String!
+  email: String!
+  role: String!
+  location: String!
+  team: Team @connection(name: "TeamMembers")
+  vote: Team @connection
+}
+type Judge @model {
+  id: ID!
+  name: String!
+  email: String!
+}
+type Criteria @model {
+  id: ID!
+  name: String!
+  description: String!
+}
+type Vote @model {
+  id: ID!
+  judge: Judge @connection
+  team: Team @connection
+  criteria: Criteria @connection
+  vote: Int!
+}
