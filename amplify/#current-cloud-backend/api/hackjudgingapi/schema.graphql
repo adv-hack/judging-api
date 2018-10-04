@@ -1,16 +1,16 @@
 type Team @model {
   id: ID!
   name: String!
-  idea: String!
-  description: String!
+  idea: String
+  description: String
   members: [Member] @connection(name: "TeamMembers")
 }
 type Member @model {
   id: ID!
   name: String!
   email: String!
-  role: String!
-  location: String!
+  role: String
+  location: String
   team: Team @connection(name: "TeamMembers")
   vote: Team @connection
 }
@@ -22,7 +22,7 @@ type Judge @model {
 type Criteria @model {
   id: ID!
   name: String!
-  description: String!
+  description: String
 }
 type Vote @model {
   id: ID!

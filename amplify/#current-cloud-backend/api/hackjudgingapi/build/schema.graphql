@@ -50,8 +50,8 @@ type Subscription {
 type Team {
   id: ID!
   name: String!
-  idea: String!
-  description: String!
+  idea: String
+  description: String
   members(filter: ModelMemberFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelMemberConnection
 }
 
@@ -132,8 +132,8 @@ input ModelTeamFilterInput {
 
 input CreateTeamInput {
   name: String!
-  idea: String!
-  description: String!
+  idea: String
+  description: String
 }
 
 input UpdateTeamInput {
@@ -151,8 +151,8 @@ type Member {
   id: ID!
   name: String!
   email: String!
-  role: String!
-  location: String!
+  role: String
+  location: String
   team: Team
   vote: Team
 }
@@ -176,8 +176,8 @@ input ModelMemberFilterInput {
 input CreateMemberInput {
   name: String!
   email: String!
-  role: String!
-  location: String!
+  role: String
+  location: String
   memberTeamId: ID
   memberVoteId: ID
 }
@@ -234,7 +234,7 @@ input DeleteJudgeInput {
 type Criteria {
   id: ID!
   name: String!
-  description: String!
+  description: String
 }
 
 type ModelCriteriaConnection {
@@ -253,7 +253,7 @@ input ModelCriteriaFilterInput {
 
 input CreateCriteriaInput {
   name: String!
-  description: String!
+  description: String
 }
 
 input UpdateCriteriaInput {
