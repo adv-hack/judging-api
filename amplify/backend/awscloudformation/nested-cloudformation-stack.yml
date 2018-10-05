@@ -84,10 +84,10 @@
 				"TemplateURL": "https://s3.amazonaws.com/hackjudgingapi-20181004120323-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "hackjudgingapi",
-					"schemaGraphql": "s3://hackjudgingapi-20181004120323-deployment/amplify-appsync-files/schema.graphql.1538673297570",
+					"schemaGraphql": "s3://hackjudgingapi-20181004120323-deployment/amplify-appsync-files/schema.graphql.1538701716269",
 					"ResolverBucket": "hackjudgingapi-20181004120323-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1538673297570"
+					"DeploymentTimestamp": "1538701716269"
 				}
 			}
 		},

@@ -25,8 +25,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/hackjudgingapi-20181004120323-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apihackjudgingapi"
 			},
-			"lastPushTimeStamp": "2018-10-04T17:16:39.650Z",
-			"lastPushDirHash": "P56Kt/lKc8r8fWNNgwPeEO78lpU="
+			"lastPushTimeStamp": "2018-10-05T01:10:20.756Z",
+			"lastPushDirHash": "HdazjiTnTtdbRwhYDcD4KbQ+SGI="
 		}
 	},
 	"auth": {
@@ -37,7 +37,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/hackjudgingapi-20181004120323-deployment/amplify-cfn-templates/auth/cognitoc8d03c88-cloudformation-template.yml",
 				"logicalId": "authcognitoc8d03c88"
 			},
-			"lastPushTimeStamp": "2018-10-04T17:16:38.319Z",
+			"lastPushTimeStamp": "2018-10-05T01:10:19.508Z",
 			"output": {
 				"AppClientSecret": "1iqbkqok4806arejapcf6k8ou5h1e7kfs7h0itk0mgtg824de16m",
 				"UserPoolId": "eu-west-1_il481QHcj",

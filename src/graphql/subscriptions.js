@@ -11,6 +11,9 @@ export const OnCreateTeam = gql`
       members {
         nextToken
       }
+      votes {
+        nextToken
+      }
     }
   }
 `;
@@ -24,6 +27,9 @@ export const OnUpdateTeam = gql`
       members {
         nextToken
       }
+      votes {
+        nextToken
+      }
     }
   }
 `;
@@ -35,6 +41,9 @@ export const OnDeleteTeam = gql`
       idea
       description
       members {
+        nextToken
+      }
+      votes {
         nextToken
       }
     }

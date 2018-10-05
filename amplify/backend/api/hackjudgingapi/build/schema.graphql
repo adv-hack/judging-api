@@ -53,6 +53,7 @@ type Team {
   idea: String
   description: String
   members(filter: ModelMemberFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelMemberConnection
+  votes(filter: ModelVoteFilterInput, sortDirection: ModelSortDirection, limit: Int, nextToken: String): ModelVoteConnection
 }
 
 enum ModelSortDirection {
@@ -268,9 +269,9 @@ input DeleteCriteriaInput {
 
 type Vote {
   id: ID!
-  judge: Judge
-  team: Team
-  criteria: Criteria
+  judge: Judge!
+  team: Team!
+  criteria: Criteria!
   vote: Int!
 }
 

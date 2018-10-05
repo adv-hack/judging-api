@@ -4,6 +4,7 @@ type Team @model {
   idea: String
   description: String
   members: [Member] @connection(name: "TeamMembers")
+  votes: [Vote] @connection(name: "TeamVotes")
 }
 type Member @model {
   id: ID!
@@ -26,8 +27,8 @@ type Criteria @model {
 }
 type Vote @model {
   id: ID!
-  judge: Judge @connection
-  team: Team @connection
-  criteria: Criteria @connection
+  judge: Judge! @connection
+  team: Team! @connection(name: "TeamVotes")
+  criteria: Criteria! @connection
   vote: Int!
 }

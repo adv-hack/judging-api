@@ -11,6 +11,9 @@ export const GetTeam = gql`
       members {
         nextToken
       }
+      votes {
+        nextToken
+      }
     }
   }
 `;

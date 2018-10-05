@@ -191,6 +191,10 @@ export type CreateTeamMutation = {|
       __typename: string,
       nextToken: ?string,
     |},
+    votes: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
   |},
 |};
 
@@ -209,6 +213,10 @@ export type UpdateTeamMutation = {|
       __typename: string,
       nextToken: ?string,
     |},
+    votes: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
   |},
 |};
 
@@ -224,6 +232,10 @@ export type DeleteTeamMutation = {|
     idea: ?string,
     description: ?string,
     members: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
+    votes: ? {|
       __typename: string,
       nextToken: ?string,
     |},
@@ -403,20 +415,20 @@ export type CreateVoteMutation = {|
   createVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -434,20 +446,20 @@ export type UpdateVoteMutation = {|
   updateVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -465,20 +477,20 @@ export type DeleteVoteMutation = {|
   deleteVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -500,6 +512,10 @@ export type GetTeamQuery = {|
     idea: ?string,
     description: ?string,
     members: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
+    votes: ? {|
       __typename: string,
       nextToken: ?string,
     |},
@@ -648,20 +664,20 @@ export type GetVoteQuery = {|
   getVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -700,6 +716,10 @@ export type OnCreateTeamSubscription = {|
       __typename: string,
       nextToken: ?string,
     |},
+    votes: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
   |},
 |};
 
@@ -714,6 +734,10 @@ export type OnUpdateTeamSubscription = {|
       __typename: string,
       nextToken: ?string,
     |},
+    votes: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
   |},
 |};
 
@@ -725,6 +749,10 @@ export type OnDeleteTeamSubscription = {|
     idea: ?string,
     description: ?string,
     members: ? {|
+      __typename: string,
+      nextToken: ?string,
+    |},
+    votes: ? {|
       __typename: string,
       nextToken: ?string,
     |},
@@ -864,20 +892,20 @@ export type OnCreateVoteSubscription = {|
   onCreateVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -891,20 +919,20 @@ export type OnUpdateVoteSubscription = {|
   onUpdateVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
@@ -918,20 +946,20 @@ export type OnDeleteVoteSubscription = {|
   onDeleteVote: ? {|
     __typename: "Vote",
     id: string,
-    judge: ? {|
+    judge: {|
       __typename: string,
       id: string,
       name: string,
       email: string,
     |},
-    team: ? {|
+    team: {|
       __typename: string,
       id: string,
       name: string,
       idea: ?string,
       description: ?string,
     |},
-    criteria: ? {|
+    criteria: {|
       __typename: string,
       id: string,
       name: string,
